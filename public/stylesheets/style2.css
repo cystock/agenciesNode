@@ -16,35 +16,44 @@ html {
     margin: 0 auto;
 }
 
-button {
-    padding: 0 2.5rem 2.5rem;
-    margin: 0;
-    width: 100px;
-    height: 20px;
+.btn {
+    width: auto;
     text-align: center;
+    text-anchor: middle;
     vertical-align: middle;
     horiz-align: center;
-    background-color: #a6c1ee;
+    font-size: 17px
 }
+
+.likebtn {
+    background-color: #5ab951;
+    color:  #f8f7ff;
+    background-position: 25% 50%;
+}
+
+.unlikebtn {
+    background-color: #b95353;
+    color:  #f8f7ff;
+    background-position: 25% 50%;
+}
+
+#mitabla thead th {
+    position: sticky;
+    top: 0;
+}
+
 
 h1 {
     text-align: center;
     padding: 1.5rem 2.5rem;
-    background-image: linear-gradient(120deg, #fbc2eb 0%, #a6c1ee 100%);
     margin: 0 0 2rem 0;
-    font-size: 1.5rem;
-    color: white;
+    font-family: Verdana;
+    font-palette: dark;
+    font-weight: bold;
+    font-size: 2rem;
+    color: #072f6c;
 }
 
-
-
-/* Create four equal columns that floats next to each other */
-.column {
-    float: left;
-    width: 25%;
-    padding: 10px;
-    height: 300px; /* Should be removed. Only for demonstration */
-}
 
 /* Clear floats after the columns */
 .row:after {
@@ -53,11 +62,9 @@ h1 {
     clear: both;
 }
 
-
-
 img {
     display: block;
-    margin: 1rem auto;
+    margin: 2rem auto;
     max-width: 100%;
 }
 
@@ -66,9 +73,28 @@ p {
     margin: 0;
 }
 
+#content {
+    position: relative;
+}
+#content img {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+}
+
+.agencies-header {
+    width: 100%;
+    height: 150px;
+    background-color: #faf25b;
+}
+
 .container {
     display: flex;
     flex-wrap: wrap;
+}
+
+.container-fluid{
+    background-image: linear-gradient(120deg, #fffdbd 0%, #f8f7ff 100%);
 }
 
 .card {
@@ -78,33 +104,4 @@ p {
     border-radius: 12px;
     overflow: hidden;
     transition: all .2s linear;
-}
-
-.card:hover {
-    box-shadow: 2px 8px 45px rgba(0, 0, 0, .15);
-    transform: translate3D(0, -2px, 0);
-}
-
-@media screen and (min-width: 600px) {
-    .card {
-        flex: 1 1 calc(50% - 2rem);
-    }
-}
-
-@media screen and (min-width: 900px) {
-    .card {
-        flex: 1 1 calc(33% - 2rem);
-    }
-}
-
-.card:nth-child(2n) h1 {
-    background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
-}
-
-.card:nth-child(4n) h1 {
-    background-image: linear-gradient(120deg, #ff9a9e 0%, #fecfef 100%);
-}
-
-.card:nth-child(5n) h1 {
-    background-image: linear-gradient(120deg, #ffc3a0 0%, #ffafbd 100%);
 }

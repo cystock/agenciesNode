@@ -90,7 +90,19 @@ router.get('/sites/:site_id/payment_methods/:payment_mth_id/near_to', function(r
 
 /* GET all agencies */
 router.get('/', function(req, res) {
-    recommended_path = "./recommended_agencies.json";
+    var recommended_path = "./agencies.json";
+    if (fs.existsSync(recommended_path)){
+        var readAgenciesFile = JSON.parse(fs.readFileSync(recommended_path).toString());
+        res.send(readAgenciesFile);
+    } else {
+        res.send('Do not have a previous Search Agencies.')
+    }
+
+});
+
+/* GET all agencies */
+router.get('/recommended_agencies', function(req, res) {
+    var recommended_path = "./recommended_agencies.json";
     if (fs.existsSync(recommended_path)){
         var readAgenciesFile = JSON.parse(fs.readFileSync(recommended_path).toString());
         res.send(readAgenciesFile);
