@@ -81,7 +81,8 @@
 
 
     $ ("#recommended_agencies").click(function () {
-        $("#mitabla").empty();
+        $("#mitabla").find("tr:gt(1)").remove();
+        //$("#mitabla").empty();
         $.ajax({
             url: 'http://localhost:3000/agencies/recommended_agencies',
             type: "GET",
@@ -105,8 +106,7 @@
                     var city = registro.address.city;
                     var country = registro.address.country;
                     var state = registro.address.state;
-                    $('#mitabla tbody').append('<thead class="thead-light"><tr><th>Agency Code</th><th>Description</th><th>Distance</th><th>id</th><th>Address Line</th><th>City</th><th>Country</th><th >State</th></tr></thead>' +
-                        '<tr><td>' + agency_code + '</td><td>' + description + '</td><td>' + distance + '</td><td>' + id + '</td><td>' + address_line + '</td><td>' + city + '</td><td>' + country + '</td><td>' + state + '</td></tr>')
+                    $('#mitabla').append('<tr><td>' + agency_code + '</td><td>' + description + '</td><td>' + distance + '</td><td>' + id + '</td><td>' + address_line + '</td><td>' + city + '</td><td>' + country + '</td><td>' + state + '</td></tr>')
                 });
             }
         });
@@ -114,7 +114,8 @@
 
 
     $ ("#agencies").click(function () {
-        $("#mitabla").empty();
+        //$("#mitabla").empty();
+        $("#mitabla").find("tr:gt(1)").remove();
         $.ajax({
             url: 'http://localhost:3000/agencies',
             type: "GET",
